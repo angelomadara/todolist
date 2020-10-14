@@ -1,17 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="home">
+    <img src="@/assets/logo.png" alt="Vue Logo" id="vue-logo">
+    <div class="title">
+      What do I need to do today?
+    </div>
+    <input v-model="myTodo" type="text">
+    <button @click="addToDo">Add</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
+  data: function() {
+    return {
+      myTodo: ''
+    }
+  },
   components: {
-    HelloWorld
+    // HelloWorld
+  },
+  mothods:{
+    addToDo : function(){
+      console.log(this.myTodo)
+    }
   }
 }
 </script>
